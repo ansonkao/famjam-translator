@@ -15,14 +15,16 @@ export default async function Home() {
 
   return (
     <HydrateClient>
-      <main className="flex min-h-screen flex-col items-center justify-center bg-gradient-to-b from-gray-900 to-black text-white">
-        <div className="container flex flex-col items-center justify-center gap-12 px-4 py-16">
-          <h1 className="text-5xl font-extrabold tracking-tight sm:text-[4rem]">
-            English to Chinese <span className="text-blue-500">Speech</span>
-          </h1>
-          <TranslationBox />
+      <main className="flex min-h-screen flex-col bg-gradient-to-b from-gray-900 to-black text-white">
+        <div className="container mx-auto flex flex-1 flex-col px-4 py-16">
+          <div className="mt-auto flex flex-col items-center gap-12">
+            <h1 className="text-xl font-extrabold tracking-tight sm:text-[4rem]">
+              English to <span className="text-blue-500">Chinese</span>
+            </h1>
+            <TranslationBox />
 
-          {session?.user && <LatestPost />}
+            {session?.user && <LatestPost />}
+          </div>
         </div>
       </main>
     </HydrateClient>
